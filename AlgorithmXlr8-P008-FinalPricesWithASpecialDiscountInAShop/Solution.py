@@ -2,8 +2,7 @@ def main(n):
     stk=[]
     for i in range(n):
         while stk and prices[stk[-1]] >= prices[i]:
-            index=stk.pop()
-            prices[index]-=prices[i]
+            prices[stk.pop()]-=prices[i]
         stk.append(i)
     return " ".join(map(str,prices))
    
